@@ -5,15 +5,15 @@ WP_VOL = /home/lmasson/data/wp_vol/
 DB_VOL = /home/lmasson/data/db_vol/
 
 all:
-#mkdir -p $(WP_VOL)
+	docker-compose -f ./srcs/docker-compose.yml up -d --build
+#	mkdir -p $(WP_VOL)
 #	mkdir -p $(DB_VOL)
-	docker-compose -f ./srcs/docker-compose.yaml up -d --build
 
 up:
-	docker-compose -f ./srcs/docker-compose.yaml up -d
+	docker-compose -f ./srcs/docker-compose.yml up -d
 
 down:
-	docker-compose -f ./srcs/docker-compose.yaml down
+	docker-compose -f ./srcs/docker-compose.yml down
 
 clear: down
 	docker container prune -y;
