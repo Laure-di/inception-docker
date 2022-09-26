@@ -6,8 +6,8 @@ DB_VOL = /home/lmasson/data/db_vol/
 
 all:
 	docker-compose -f ./srcs/docker-compose.yml up -d --build
-#	mkdir -p $(WP_VOL)
-#	mkdir -p $(DB_VOL)
+	mkdir -p $(WP_VOL)
+	mkdir -p $(DB_VOL)
 
 up:
 	docker-compose -f ./srcs/docker-compose.yml up -d
