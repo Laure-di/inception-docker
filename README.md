@@ -2,6 +2,7 @@
 
 ## Installation d'une VM debian 
 https://www.numetopia.fr/comment-installer-debian-dans-virtualbox/#configurer_la_machine_virtuelle_debian_dans_virtualbox
+https://www.youtube.com/watch?v=Mok2J__Ci3Y
 
 Pour bien démarrer le projet, quand on ne connait pas du tout docker, il est nécessaire de commencer par un tutoriel plusieurs options :
 
@@ -45,7 +46,7 @@ https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.html
 https://medium.com/@munteanu210/how-to-install-an-ssl-certificate-on-nginx-b1dd39a4628d
 https://www.geeksforgeeks.org/practical-uses-of-openssl-command-in-linux/
 
-##NGINX
+## NGINX
 
 https://ubuntu.com/tutorials/install-and-configure-nginx#2-installing-nginx
 https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
@@ -55,4 +56,6 @@ https://docs.docker.com/config/containers/logging/
 
 SSL CONFIGURATION NGINX.CONF
 https://medium.com/@mvuksano/how-to-properly-configure-your-nginx-for-tls-564651438fe0
+
+https://medium.com/swlh/wordpress-deployment-with-nginx-php-fpm-and-mariadb-using-docker-compose-55f59e5c1a
 
