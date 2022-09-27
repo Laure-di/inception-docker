@@ -45,9 +45,10 @@ https://www.digicert.com/kb/ssl-support/openssl-quick-reference-guide.html
 https://medium.com/@munteanu210/how-to-install-an-ssl-certificate-on-nginx-b1dd39a4628d
 https://www.geeksforgeeks.org/practical-uses-of-openssl-command-in-linux/
 
-NGINX
+##NGINX
 
 https://ubuntu.com/tutorials/install-and-configure-nginx#2-installing-nginx
+https://www.nginx.com/resources/wiki/start/topics/recipes/wordpress/
 
 GESTION DES LOG
 https://docs.docker.com/config/containers/logging/
