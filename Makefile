@@ -19,5 +19,5 @@ clean: down
 	docker system prune -a;
 
 fclean: clean
-		rm -rf $(WP_VOL)
-		rm -rf $(DB_VOL)
+		sudo rm -rf $(WP_VOL)
+		sudo rm -rf $(DB_VOL)
