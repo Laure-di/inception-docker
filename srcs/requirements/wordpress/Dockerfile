@@ -24,5 +24,5 @@ RUN ln -sf /dev/stdout /var/log/php7.3-fpm.access.log
 
 RUN	 ln -sf /dev/stderr /var/log/php7.3-fpm.log
 
-CMD	["/root/wp.sh"]
+CMD	["bash", "/root/wp.sh"]
 
