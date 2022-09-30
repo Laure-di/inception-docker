@@ -1,8 +1,16 @@
 # inception
 
 ## Installation d'une VM debian 
+
 https://www.numetopia.fr/comment-installer-debian-dans-virtualbox/#configurer_la_machine_virtuelle_debian_dans_virtualbox
 https://www.youtube.com/watch?v=Mok2J__Ci3Y
+
+### Gestion user VM
+1. Ajouter lmasson.42.fr dans le fichier /etc/hostnamme
+2. Creer un user login : sudo adduser login
+3. Ajouter les groupes sudo, docker : sudo usermod -aG sudo login
+lmass
+
 
 Pour bien démarrer le projet, quand on ne connait pas du tout docker, il est nécessaire de commencer par un tutoriel plusieurs options :
 
