@@ -2,6 +2,8 @@ FROM debian:buster
 
 RUN apt-get update
 
+RUN mkdir -p /var/www/html
+
 RUN apt-get install -y php7.3-fpm  php7.3-mysql php-common curl mariadb-client
 
 RUN mkdir -p /run/php/
@@ -17,6 +19,10 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 COPY wp.sh /root/wp.sh
 
 RUN chmod +x /root/wp.sh
+
+RUN ln -sf /dev/stdout /var/log/php7.3-fpm.access.log
+
+RUN	 ln -sf /dev/stderr /var/log/php7.3-fpm.log
 
 CMD	["/root/wp.sh"]
 
