@@ -15,7 +15,7 @@ up:
 down:
 	docker-compose -f ./srcs/docker-compose.yml down
 
-clear: down
+clean: down
 	docker container prune -y;
 
 fclean: clean
