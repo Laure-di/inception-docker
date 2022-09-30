@@ -18,5 +18,5 @@ COPY wp.sh /root/wp.sh
 
 RUN chmod +x /root/wp.sh
 
-CMD	["bash", "/root/wp.sh"]
+CMD	["/root/wp.sh"]
 
