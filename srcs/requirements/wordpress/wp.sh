@@ -2,9 +2,9 @@
 if [ ! -f /var/www/html/wp-config.php ]; then
  	cd /var/www/html/
 	wp core download --allow-root
-	wp config create --dbname=${DB_WORDPRESS} --dbuser=${DB_USER} --dbpass=${DB_USER_PASSWORD} --dbhost=mariadb --dbcharset="utf8" --dbcollate="utf8_general_ci" --allow-root
-	wp core install --url=${WP_URL} --title="${WP_TITLE}" --admin_user=${WP_ADMIN} --admin_password=${WP_ADMIN_PASSWORD} --admin_email=${WP_ADMIN_MAIL} --skip-email --allow-root
-	wp user create ${WP_USER} ${WP_USER_MAIL} --role=author --user_pass=${WP_USER_PASSWORD} --allow-root
+	wp config create --dbname=${MYSQL_DB} --dbuser=${MYSQL_USER} --dbpass=${MYSQL_PASSWORD} --dbhost=mariadb --dbcharset="utf8" --dbcollate="utf8_general_ci" --allow-root
+	wp core install --url=${URL} --title="${TITLE}" --admin_user=${ADMIN_WP} --admin_password=${ADMIN_PASSWD} --admin_email=${ADMIN_EMAIL} --skip-email --allow-root
+	wp user create ${USER_WP} ${USER_MAIL_WP} --role=author --user_pass=${USER_WP_PASS} --allow-root
 	wp theme install "teluro" --activate --allow-root
 	else
 		echo "wordpress already created"
