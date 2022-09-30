@@ -16,7 +16,7 @@ down:
 	docker-compose -f ./srcs/docker-compose.yml down
 
 clean: down
-	docker container prune -y;
+	docker container prunei -a;
 
 fclean: clean
 		rm -rf $(WP_VOL)
