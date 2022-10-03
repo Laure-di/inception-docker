@@ -31,4 +31,4 @@ _EOF_
 	mysql -u root -e "FLUSH PRIVILEGES;"
 	echo "Database created!"
 	fi
-mysqld --slow-query-log-file=/dev/stderr --slow-query-log
+service mysql stop

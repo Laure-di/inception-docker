@@ -9,5 +9,3 @@ if [ ! -f /var/www/html/wp-config.php ]; then
 	else
 		echo "wordpress already created"
 fi
-
-php-fpm7.3 -F -R

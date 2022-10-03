@@ -16,6 +16,6 @@ COPY ./setup_script.sh /root/setup_script.sh
 
 RUN chmod +x /root/setup_script.sh
 
-CMD ["bash", "/root/setup_script.sh"]
+ENTRYPOINT ["/root/setup_script.sh"]
 
-# CMD		["mysqld"]
+CMD		["mysqld_safe"]
