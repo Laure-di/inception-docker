@@ -26,5 +26,5 @@ RUN	 ln -sf /dev/stderr /var/log/php7.3-fpm.log
 
 ENTRYPOINT	["/root/wp.sh"]
 
-#CMD	["php-fpm7.3 ", "-F"]
+CMD	["php-fpm7.3 ", "-F"]
 
