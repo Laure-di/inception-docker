@@ -10,17 +10,16 @@ if [ -d /var/lib/mysql/wp_wordpress ]; then
 	echo "The database already exist!"
 else
 mysql_secure_installation
-#<<EOF
-#
-#
-#y
-#secret
-#secret
-#y
-#y
-#y
-#y
-#EOF
+<<EOF
+
+y
+secret
+secret
+y
+y
+y
+y
+EOF
 
 	until mysqladmin ping;do
 		sleep 2
