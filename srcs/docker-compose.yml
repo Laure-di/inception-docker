@@ -30,8 +30,8 @@
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
-	ports:
-	 - "127.0.0.1:3306:3306"
+    ports:
+     - "127.0.0.1:3306:3306"
     env_file: ./.env
     volumes:
      - db_vol:/var/lib/mysqld
