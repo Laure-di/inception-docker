@@ -11,6 +11,7 @@ if [ -d /var/lib/mysql/wp_wordpress ]; then
 else
 mysql_secure_installation <<EOF
 
+
 y
 secret
 secret
