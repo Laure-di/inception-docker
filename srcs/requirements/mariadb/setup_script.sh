@@ -10,7 +10,7 @@ if [ -d /var/lib/mysql/wp_wordpress ]; then
 	echo "The database already exist!"
 else
 	mysql_secure_installation <<_EOF_
-
+	n
 	Y
 	coucou4ll
 	coucou4ll
