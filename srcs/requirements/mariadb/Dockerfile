@@ -12,7 +12,7 @@ RUN		chmod 777 /var/run/mysqld
 
 RUN sed -i "s/bind-address            = 127.0.0.1/bind-address            = 0.0.0.0/g" /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY ./setup_script.sh /root/setup_script.sh
+COPY ./setup_script.sh /usr/local/bin/
 
 RUN chmod +x /root/setup_script.sh
 
