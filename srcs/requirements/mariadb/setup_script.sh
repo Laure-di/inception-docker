@@ -9,8 +9,8 @@ service mysql start
 if [ -d /var/lib/mysql/wp_wordpress ]; then
 	echo "The database already exist!"
 else
-	mysql_secure_installation
-	<<EOF
+mysql_secure_installation
+<<EOF
 
 y
 secret
