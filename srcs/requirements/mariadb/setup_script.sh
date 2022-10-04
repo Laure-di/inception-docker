@@ -28,5 +28,4 @@ else
 echo "The database already exist!"
 fi
 etc/init.d/mysql stop
-chmod 777 /var/run/mysqld/mysqld.sock
 exec "$@"
