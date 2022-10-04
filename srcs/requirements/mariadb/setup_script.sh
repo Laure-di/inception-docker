@@ -2,6 +2,7 @@
 
 mysql_install_db
 if [ ! -d /var/lib/mysql/wp_wordpress ]; then
+service mysql start
 mysql_secure_installation
 <<EOF
 
@@ -13,7 +14,6 @@ y
 y
 y
 EOF
-service mysql start
 until mysqladmin ping;do
 sleep 2
 done
