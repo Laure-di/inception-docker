@@ -14,7 +14,7 @@ RUN sed -i "s/bind-address            = 127.0.0.1/bind-address            = 0.0.
 
 COPY ./setup_script.sh /usr/local/bin/
 
-RUN chmod +x /root/setup_script.sh
+#RUN chmod +x /root/setup_script.sh
 
 ENTRYPOINT ["/root/setup_script.sh"]
 
