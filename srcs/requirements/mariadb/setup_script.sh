@@ -1,7 +1,6 @@
 #!/bin/sh
 
 mysql_install_db
-
 if [ ! -d /var/lib/mysql/wp_wordpress ]; then
 mysql_secure_installation<<EOF
 
