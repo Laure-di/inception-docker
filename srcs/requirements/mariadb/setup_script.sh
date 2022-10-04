@@ -27,4 +27,4 @@ echo "Database created!"
 else
 echo "The database already exist!"
 fi
-service mysql stop
+#service mysql stop
