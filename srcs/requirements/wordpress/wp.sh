@@ -1,4 +1,4 @@
-#On check si le fichier wp déjà download, attention a stocker dans vol wp
+#!/bin/sh
 if [ ! -f /var/www/html/wp-config.php ]; then
  	cd /var/www/html/
 	wp core download --allow-root
