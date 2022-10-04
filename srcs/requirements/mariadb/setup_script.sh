@@ -1,6 +1,9 @@
 #!/bin/sh
+
 mysql_install_db
-service mysql start
+
+etc/init.d/mysql start
+
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
 mysql_secure_installation<<_EOF_
 
@@ -24,5 +27,5 @@ echo "Database created!"
 else
 echo "The database already exist!"
 fi
-service mysql stop
+etc/init.d/mysql stop
 exec "$@"
