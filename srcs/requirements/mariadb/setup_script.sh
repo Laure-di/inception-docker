@@ -5,8 +5,7 @@ mysql_install_db
 etc/init.d/mysql start
 
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
-mysql_secure_installation<<_EOF_
-
+echo "& y y abc abc y y y y" | /bin/mysql_secure_installation
 y
 secret
 secret
