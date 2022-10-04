@@ -3,7 +3,8 @@
 mysql_install_db
 service mysql start
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
-mysql_secure_installation<<EOF
+mysql_secure_installation
+<<EOF
 
 y
 secret
