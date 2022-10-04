@@ -5,7 +5,16 @@ mysql_install_db
 etc/init.d/mysql start
 
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
-echo "& y y abc abc y y y y" | ./usr/bin/mysql_secure_installation
+mysql_secure_installation <<EOF
+
+Y
+hellocoucou
+hellocoucou
+Y
+Y
+Y
+Y
+EOF
 until mysqladmin ping;do
 sleep 2
 done
