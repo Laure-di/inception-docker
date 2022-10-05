@@ -21,4 +21,3 @@ if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
     else
         echo "database already created"
 fi
-mysqld --slow-query-log-file=/dev/stderr --slow-query-log
