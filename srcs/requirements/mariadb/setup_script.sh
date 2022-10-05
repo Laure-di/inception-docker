@@ -2,7 +2,7 @@
 
 mysql_install_db
 
-etc/init.d/mysql start
+/etc/init.d/mysql start
 
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
 mysql_secure_installation <<EOF
@@ -27,5 +27,5 @@ echo "Database created!"
 else
 echo "The database already exist!"
 fi
-etc/init.d/mysql stop
+/etc/init.d/mysql stop
 exec "$@"
