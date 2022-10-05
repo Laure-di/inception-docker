@@ -1,5 +1,5 @@
-chmod o+w /dev/stdout
-chmod o+w /dev/stderr
+#!/bin/sh
+
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
     echo "First run"
     mysqld&
@@ -7,7 +7,6 @@ if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
         sleep 2
     done
     mysql -u root -e "CREATE DATABASE ${MYSQL_DATABASE};"
-    mysql -u root -e "SET GLOBAL general_log_file='mariadb.log';"
     mysql -u root -e "CREATE USER '${MYSQL_ADMIN}'@'%' IDENTIFIED BY '${MYSQL_ADMIN}';"
     mysql -u root -e "GRANT ALL ON *.* TO '${MYSQL_DATABASE}'@'%';"
     mysql -u root -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"
@@ -21,3 +20,5 @@ if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
     else
         echo "database already created"
 fi
+
+exec "$@"
