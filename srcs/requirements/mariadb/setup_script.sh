@@ -1,31 +1,24 @@
-#!/bin/sh
-
-mysql_install_db
-
-/etc/init.d/mysql start
-
-if [ -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
-echo "The database already exist"
-else
-mysql_secure_installation <<EOF
-
-Y
-hellocoucou
-hellocoucou
-Y
-Y
-Y
-Y
-EOF
-until mysqladmin ping;do
-sleep 2
-done
-mysql -uroot -e "CREATE DATABASE ${MYSQL_DATABASE};"
-mysql -uroot -e "CREATE USER '${MYSQL_ADMIN}'@'localhost' IDENTIFIED BY '${MYSQL_ADMIN_PASSWORD}';"
-mysql -uroot -e "GRANT ALL PRIVILEGES ON *.* TO '${MYSQL_ADMIN}'@'localhost';"
-mysql -uroot -e "CREATE USER '${MYSQL_USER}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}'; GRANT ALL ON wp_wordpress.* TO '${MYSQL_USER}'@'localhost'"
-mysql -uroot -e "FLUSH PRIVILEGES;"
-echo "Database created!"
+chmod o+w /dev/stdout
+chmod o+w /dev/stderr
+if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
+    echo "First run"
+    mysqld&
+    until mysqladmin ping; do
+        sleep 2
+    done
+    mysql -u root -e "CREATE DATABASE ${MYSQL_DATABASE};"
+    mysql -u root -e "SET GLOBAL general_log_file='mariadb.log';"
+    mysql -u root -e "CREATE USER '${MYSQL_ADMIN}'@'%' IDENTIFIED BY '${MYSQL_ADMIN}';"
+    mysql -u root -e "GRANT ALL ON *.* TO '${MYSQL_DATABASE}'@'%';"
+    mysql -u root -e "CREATE USER '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';"
+    mysql -u root -e "GRANT ALL ON db_wordpress.* TO '${MYSQL_USER}'@'%';"
+    mysql -u root -e "FLUSH PRIVILEGES;"
+    mysql -e "DELETE FROM mysql.user WHERE user=''"
+    mysql -e "DELETE FROM mysql.user WHERE user='root'"
+    mysql -e "FLUSH PRIVILEGES"
+    killall mysqld
+    echo "End first run"
+    else
+        echo "database already created"
 fi
-/etc/init.d/mysql stop
-exec "$@"
+mysqld --slow-query-log-file=/dev/stderr --slow-query-log
