@@ -5,16 +5,16 @@ mysql_install_db
 /etc/init.d/mysql start
 
 if [ ! -d /var/lib/mysql/${MYSQL_DATABASE} ]; then
-mysql_secure_installation <<EOF
-
-Y
-hellocoucou
-hellocoucou
-Y
-Y
-Y
-Y
-EOF
+#mysql_secure_installation <<EOF
+#
+#Y
+#hellocoucou
+#hellocoucou
+#Y
+#Y
+#Y
+#Y
+#EOF
 until mysqladmin ping;do
 sleep 2
 done
