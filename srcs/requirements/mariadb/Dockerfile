@@ -4,6 +4,8 @@ RUN		apt-get update
 
 RUN		apt-get -y install mariadb-server mariadb-client
 
+RUN		rm -rf /var/lib/apt/lists/*
+
 RUN		mkdir -p /var/run/mysqld && chown -R mysql:mysql /var/run/mysqld
 
 RUN		mkdir -p /run/mysqld && chown -R mysql:root /run/mysqld
